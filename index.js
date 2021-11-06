@@ -9,6 +9,7 @@ const getTimes = function(time) {
 };
 
 nextISSTimesForMyLocation((error, times) => {
+  if (error) throw error;
   for (let time of times) {
     getTimes(time);
   }
